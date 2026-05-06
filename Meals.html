@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الوجبات</title>
+
+   <link rel="stylesheet" href="Style.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="myFunctions.js" defer></script>
+</head>
+
+<body>
+<nav class="navbar">
+    <div class="logo"><strong>Sea Food Restaurant</strong></div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">الرئيسية</a></li>
+        <li><a href="AboutUs.html">من نحن</a></li>
+        <li><a href="Meals.html" class="active" aria-current="page">الوجبات</a></li>
+    </ul>
+</nav>
+    <h1>مطعم الوجبات البحرية</h1>
+
+    <div class="selection-menu">
+        <h2>مرحباً بك، يرجى اختيار القسم:</h2>
+
+        <button type="button" class="btn-choice" onclick="showCategory('meals-table', this)">
+            الوجبات الرئيسية
+        </button>
+
+        <button type="button" class="btn-choice" onclick="showCategory('appetizers-table', this)">
+            المقبلات والشوربات
+        </button>
+    </div>
+
+    <table id="meals-table" class="meals-table">
+        <thead>
+            <tr>
+                <th>الرمز</th>
+                <th>الوجبة</th>
+                <th>السعر</th>
+                <th>إظهار التفاصيل</th>
+                <th>اختيار</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>SF-001</td>
+                <td>وجبة سمك بوري مشوي لشخصين</td>
+                <td class="price-val">110000 ل.س</td>
+                <td>
+                    <input type="checkbox" onclick="toggleDetails('details1', this)">
+                </td>
+                <td>
+                    <input type="checkbox" class="meal-select" data-code="SF-001" data-name="وجبة سمك بوري مشوي لشخصين" data-price="110000">
+                </td>
+            </tr>
+
+            <tr id="details1" class="details-row">
+                <td colspan="5">
+                    <div class="details-wrapper">
+                        <div class="details-text">
+                            <p><strong>المطبخ:</strong> المصري</p>
+                            <p><strong>تصنيف الطعام:</strong> مأكولات بحرية</p>
+
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>4 سمكات بوري أحمر، مغسول ومنظف.</li>
+                                <li>بضعة أوراق من الأوريجانو الطازج، مقطعة.</li>
+                                <li>1 ملعقة صغيرة من ملح الطعام.</li>
+                                <li>1 ملعقة صغيرة من الفلفل الأسود المطحون.</li>
+                            </ul>
+
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>1 ملعقة كبيرة من زيت الزيتون.</li>
+                                <li>3 فصوص ثوم مقشرة ومقطعة بشكل ناعم.</li>
+                                <li>1 حبة فلفل أحمر طازج، منزوعة البذور ومقطعة إلى شرائح رفيعة.</li>
+                                <li>بضعة أغصان من إكليل الجبل الطازجة.</li>
+                                <li>6 حبات طماطم طرية، مفرومة.</li>
+                                <li>1/2 ليمونة معصورة.</li>
+                                <li>ضمة صغيرة من البقدونس الطازج المفروم.</li>
+                            </ul>
+                        </div>
+
+                        <img src="https://static.webteb.net/images/content/ramadanrecipe_recipe_225_671.jpg" alt="وجبة سمك بوري مشوي" class="details-image">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>SF-002</td>
+                <td>وجبة روبيان جامبو مشوي لشخص واحد</td>
+                <td class="price-val">150000 ل.س</td>
+                <td>
+                    <input type="checkbox" onclick="toggleDetails('details2', this)">
+                </td>
+                <td>
+                    <input type="checkbox" class="meal-select" data-code="SF-002" data-name="وجبة روبيان جامبو مشوي لشخص واحد" data-price="150000">
+                </td>
+            </tr>
+
+            <tr id="details2" class="details-row">
+                <td colspan="5">
+                    <div class="details-wrapper">
+                        <div class="details-text">
+                            <p><strong>المطبخ:</strong> المصري</p>
+                            <p><strong>تصنيف الطعام:</strong> مأكولات بحرية فاخرة</p>
+
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>6 حبات روبيان جامبو طازج، منظف مع الاحتفاظ بالذيل.</li>
+                                <li>تتبيلة الأعشاب الخاصة مثل الأوريجانو والريحان المجفف.</li>
+                                <li>1/2 ملعقة صغيرة من الملح البحري.</li>
+                                <li>1/2 ملعقة صغيرة من الفلفل الأسود المطحون والبابريكا.</li>
+                            </ul>
+
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>2 ملعقة كبيرة من زيت الزيتون البكر.</li>
+                                <li>2 فص ثوم مقشرة ومهروسة بشكل ناعم.</li>
+                                <li>1 ملعقة كبيرة من الزبدة الطبيعية.</li>
+                                <li>رشة من رقائق الفلفل الأحمر الحار حسب الرغبة.</li>
+                                <li>1/2 ليمونة معصورة.</li>
+                                <li>ضمة صغيرة من البقدونس الطازج المفروم ناعماً للتزيين.</li>
+                            </ul>
+
+                            <p><strong>ملاحظة:</strong> يتم تقديم الوجبة مع أرز الصياد أو خضار سوتيه حسب الرغبة.</p>
+                        </div>
+
+                        <img src="https://static.webteb.net/images/content/ramadanrecipe_recipe_939_980a3f35b73-18b2-47e2-b9e3-285808103cbb.jpg" alt="وجبة روبيان جامبو مشوي" class="details-image">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>SF-003</td>
+                <td>وجبة فيليه سمك قاروص مشوي بالليمون لشخص واحد</td>
+                <td class="price-val">80000 ل.س</td>
+                <td>
+                    <input type="checkbox" onclick="toggleDetails('details3', this)">
+                </td>
+                <td>
+                    <input type="checkbox" class="meal-select" data-code="SF-003" data-name="وجبة فيليه سمك قاروص مشوي بالليمون لشخص واحد" data-price="80000">
+                </td>
+            </tr>
+
+            <tr id="details3" class="details-row">
+                <td colspan="5">
+                    <div class="details-wrapper">
+                        <div class="details-text">
+                            <p><strong>المطبخ:</strong> المصري</p>
+                            <p><strong>تصنيف الطعام:</strong> مأكولات بحرية صحية</p>
+
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>قطعة كبيرة 250 غرام من فيليه سمك القاروص الطازج.</li>
+                                <li>ملعقة صغيرة من بشر قشر الليمون.</li>
+                                <li>رشة من الملح البحري والفلفل الأبيض.</li>
+                                <li>غصن صغير من إكليل الجبل الطازج.</li>
+                            </ul>
+
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>1 ملعقة كبيرة من زيت الزيتون الصافي.</li>
+                                <li>1 فص ثوم مهروس ناعم.</li>
+                                <li>2 ملعقة كبيرة من عصير الليمون الحامض الطازج.</li>
+                                <li>1/2 ملعقة صغيرة من الخردل لتعزيز النكهة.</li>
+                                <li>رشة من الكزبرة اليابسة.</li>
+                                <li>شرائح ليمون رقيقة للتزيين.</li>
+                            </ul>
+
+                            <p><strong>ملاحظة:</strong> الوجبة مشوية بدون دهون إضافية لتناسب الباحثين عن وجبات صحية وغنية بالبروتين.</p>
+                        </div>
+
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWIslKmiGAChFu0gUJ0uNPY-ScCIccvHyWckskMrPLXCDwxH3sAKoN2ckaKA5aw0WDrvSn2fErXZPnCHHa-L-is01yzysQYanJo_XCKW8PeRk9qWytJpboBPFS75BHAKPeFOa8qt4kJHItjbyucSzV7zoW3WlYKG1LIDdmj5-TCKPEt5KtR7cpHYo_pLU/w640-h366-rw/4.jfif" alt="وجبة فيليه سمك قاروص" class="details-image">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>SF-004</td>
+                <td>وجبة طاجن ثمار البحر المشكلة</td>
+                <td class="price-val">150000 ل.س</td>
+                <td>
+                    <input type="checkbox" onclick="toggleDetails('details4', this)">
+                </td>
+                <td>
+                    <input type="checkbox" class="meal-select" data-code="SF-004" data-name="وجبة طاجن ثمار البحر المشكلة" data-price="150000">
+                </td>
+            </tr>
+
+            <tr id="details4" class="details-row">
+                <td colspan="5">
+                    <div class="details-wrapper">
+                        <div class="details-text">
+                            <p><strong>المطبخ:</strong> الشرقي البحري</p>
+                            <p><strong>تصنيف الطعام:</strong> طواجن بحرية غنية</p>
+
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>تشكيلة من الروبيان وقطع الفيليه وحلقات الكالماري.</li>
+                                <li>1 حبة بصل متوسطة مقطعة مكعبات صغيرة.</li>
+                                <li>1 حبة فليفلة خضراء باردة مقطعة شرائح.</li>
+                                <li>ملعقة صغيرة من بهارات السمك المشكلة.</li>
+                                <li>رشة فلفل حار حسب الرغبة.</li>
+                            </ul>
+
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>2 ملعقة كبيرة من صلصة الطماطم المركزة.</li>
+                                <li>3 حبات طماطم طازجة مفرومة ناعماً.</li>
+                                <li>3 فصوص ثوم مفرومة مع الكزبرة الخضراء.</li>
+                                <li>نصف كوب ماء دافئ لتسبيك الصلصة.</li>
+                                <li>ملعقة كبيرة من زيت الذرة أو الزبدة.</li>
+                                <li>شرائح ليمون وفلفل أخضر حار على الوجه.</li>
+                            </ul>
+
+                            <p><strong>ملاحظة:</strong> يطهى ببطء في الفرن داخل فخار أصلي، ويقدم مع الخبز الساخن أو الأرز الأبيض.</p>
+                        </div>
+
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJVw4D7plgLh81WqUHxg9gLjknV9oMBbAmIA&s" alt="وجبة طاجن ثمار البحر" class="details-image">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>SF-005</td>
+                <td>كالماري محشي بالأرز والأعشاب لشخص واحد</td>
+                <td class="price-val">90000 ل.س</td>
+                <td>
+                    <input type="checkbox" onclick="toggleDetails('details5', this)">
+                </td>
+                <td>
+                    <input type="checkbox" class="meal-select" data-code="SF-005" data-name="كالماري محشي بالأرز والأعشاب لشخص واحد" data-price="90000">
+                </td>
+            </tr>
+
+            <tr id="details5" class="details-row">
+                <td colspan="5">
+                    <div class="details-wrapper">
+                        <div class="details-text">
+                            <p><strong>المطبخ:</strong> المصري</p>
+                            <p><strong>تصنيف الطعام:</strong> مأكولات بحرية محشوة</p>
+
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>2 حبات كالماري متوسطة الحجم، منظفة جيداً.</li>
+                                <li>نصف كوب أرز قصير الحبة مطهو نصف استواء.</li>
+                                <li>ملعقة صغيرة من الملح والفلفل الأبيض.</li>
+                                <li>رشة قرفة ناعمة وبهار حلو.</li>
+                                <li>صنوبر أو لوز محمص حسب الرغبة.</li>
+                            </ul>
+
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>1 ملعقة كبيرة زيت زيتون.</li>
+                                <li>2 فص ثوم مقطع شرائح.</li>
+                                <li>نصف كوب عصير طماطم طازج.</li>
+                                <li>ملعقة صغيرة من معجون الشطة حسب الرغبة.</li>
+                                <li>أوراق ريحان طازجة مفرومة.</li>
+                                <li>شرائح ليمون للتزيين.</li>
+                            </ul>
+
+                            <p><strong>ملاحظة:</strong> يقدم الطبق مع صوص الطماطم المسبك والأعشاب العطرية.</p>
+                        </div>
+
+                        <img src="https://cuisine.nessma.tv/uploads/1/2019-02/099e6f69b6266be1595d8c31fe7a5a89.jpg" alt="كالماري محشي" class="details-image">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="appetizers-table" class="meals-table">
+        <thead>
+            <tr>
+                <th>الرمز</th>
+                <th>الوجبة</th>
+                <th>السعر</th>
+                <th>إظهار التفاصيل</th>
+                <th>اختيار</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>SD-001</td>
+                <td>سلطة جرجير بالروبيان والرمان</td>
+                <td class="price-val">45000 ل.س</td>
+                <td>
+                    <input type="checkbox" onclick="toggleDetails('details6', this)">
+                </td>
+                <td>
+                    <input type="checkbox" class="meal-select" data-code="SD-001" data-name="سلطة جرجير بالروبيان والرمان" data-price="45000">
+                </td>
+            </tr>
+
+            <tr id="details6" class="details-row">
+                <td colspan="5">
+                    <div class="details-wrapper">
+                        <div class="details-text">
+                            <p><strong>المطبخ:</strong> إيطالي بحري</p>
+                            <p><strong>تصنيف الطعام:</strong> سلطات خفيفة</p>
+
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>حزمة صغيرة من أوراق الجرجير الطازجة.</li>
+                                <li>4 حبات روبيان بحجم متوسط مشوية بزبدة الثوم.</li>
+                                <li>حفنة صغيرة من حبات الرمان الحامض.</li>
+                                <li>شرائح رقيقة من الفطر الطازج.</li>
+                                <li>جوز عين الجمل مقرمش للوجه.</li>
+                            </ul>
+
+                            <p><strong>الصلصة:</strong></p>
+                            <ul>
+                                <li>1 ملعقة كبيرة دبس رمان.</li>
+                                <li>1 ملعقة كبيرة زيت زيتون بكر.</li>
+                                <li>عصرة ليمون خفيفة.</li>
+                                <li>رشة ملح خشن وفلفل أسود.</li>
+                            </ul>
+
+                            <p><strong>ملاحظة:</strong> خالية من الكاربوهيدرات.</p>
+                        </div>
+
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw9xw5j2dpXf0ov01PiqEG2y2XPRUgPbtqKw&s" alt="سلطة جرجير بالروبيان" class="details-image">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>SD-002</td>
+                <td>أصابع سمك مقرمشة كريسبي</td>
+                <td class="price-val">50000 ل.س</td>
+                <td>
+                    <input type="checkbox" onclick="toggleDetails('details7', this)">
+                </td>
+                <td>
+                    <input type="checkbox" class="meal-select" data-code="SD-002" data-name="أصابع سمك مقرمشة كريسبي" data-price="50000">
+                </td>
+            </tr>
+
+            <tr id="details7" class="details-row">
+                <td colspan="5">
+                    <div class="details-wrapper">
+                        <div class="details-text">
+                            <p><strong>المطبخ:</strong> عالمي</p>
+                            <p><strong>تصنيف الطعام:</strong> مقبلات ساخنة</p>
+
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>150 غرام من فيليه السمك الأبيض مقطع أصابع طويلة.</li>
+                                <li>نصف كوب بقسماط ممزوج بالأعشاب.</li>
+                                <li>بيضتان مخفوفتان مع القليل من الخل الأبيض.</li>
+                                <li>رشة ملح وبودرة ثوم وبابريكا.</li>
+                                <li>ملعقة كبيرة دقيق.</li>
+                            </ul>
+
+                            <p><strong>صلصة التغميس:</strong></p>
+                            <ul>
+                                <li>2 ملعقة كبيرة مايونيز.</li>
+                                <li>ملعقة صغيرة مخلل خيار مفروم ناعماً.</li>
+                                <li>عصرة ليمون ونقطة خردل.</li>
+                                <li>رشة شبت مفروم.</li>
+                            </ul>
+                        </div>
+
+                        <img src="https://kitchen.sayidaty.net/uploads/small/50/507e8aca166e314e8f9aef3cbe73d2e9_w750_h500.jpg" alt="أصابع سمك مقرمشة" class="details-image">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>SD-003</td>
+                <td>شوربة ثمار البحر بالكريمة</td>
+                <td class="price-val">55000 ل.س</td>
+                <td>
+                    <input type="checkbox" onclick="toggleDetails('details8', this)">
+                </td>
+                <td>
+                    <input type="checkbox" class="meal-select" data-code="SD-003" data-name="شوربة ثمار البحر بالكريمة" data-price="55000">
+                </td>
+            </tr>
+
+            <tr id="details8" class="details-row">
+                <td colspan="5">
+                    <div class="details-wrapper">
+                        <div class="details-text">
+                            <p><strong>المطبخ:</strong> الفرنسي البحري</p>
+                            <p><strong>تصنيف الطعام:</strong> شوربات غنية</p>
+
+                            <p><strong>المكونات:</strong></p>
+                            <ul>
+                                <li>تشكيلة بحرية من الروبيان وقطع الفيليه وحلقات الكالماري الصغيرة.</li>
+                                <li>1 حبة بطاطا صغيرة مقطعة مكعبات دقيقة.</li>
+                                <li>نصف عود كرفس مفروم ناعم.</li>
+                                <li>نصف ملعقة صغيرة من جوزة الطيب والملح.</li>
+                                <li>ورقة غار لإزالة الزفارة.</li>
+                            </ul>
+
+                            <p><strong>المرق:</strong></p>
+                            <ul>
+                                <li>1 ملعقة كبيرة زبدة طبيعية.</li>
+                                <li>1 ملعقة كبيرة دقيق.</li>
+                                <li>1 كوب من مرق السمك أو الجمبري الساخن.</li>
+                                <li>نصف كوب كريمة طبخ طازجة.</li>
+                                <li>رشة كزبرة خضراء مفرومة ناعماً للوجه.</li>
+                            </ul>
+
+                            <p><strong>ملاحظة:</strong> تقدم ساخنة بجانبها قطعة خبز محمص مع الثوم.</p>
+                        </div>
+
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr6qyiKXct-4cJH4Z0TCfYIsyw0fbIlGidLQ&s" alt="شوربة ثمار البحر" class="details-image">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="total-section">
+        <span>إجمالي السعر المختار:</span>
+        <span id="total-price">0 ل.س</span>
+    </div>
+
+    <button type="button" class="btn-continue" onclick="showOrderForm()">
+        متابعة
+    </button>
+
+    <section id="order-section" class="order-section">
+        <h2> يرجى تعبئة النموزج والضغط على أرسال لعرض الفاتورة النهائية </h2>
+
+        <form action="#" method="post" id="dataForm">
+
+            <label for="fullName">الاسم الكامل لمقدم الطلب:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="أحرف عربية فقط">
+
+            <label for="nationalId">الرقم الوطني:</label>
+            <input type="text" id="nationalId" name="nationalId" required maxlength="11" placeholder="مثال: 01123456789">
+
+            <label for="dob">تاريخ الميلاد:</label>
+            <input type="text" id="dob" name="dob" placeholder="dd-mm-yyyy">
+
+            <label for="phone">رقم الموبايل:</label>
+            <input type="tel" id="phone" name="phone" placeholder="مثال: 0931234567">
+
+            <label for="email">الإيميل:</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com">
+
+            <button type="submit">
+                إرسال
+            </button>
+        </form>
+    </section>
+
+    <div id="myModal" class="custom-modal">
+        <div class="modal-content">
+            <h3>تفاصيل الطلب النهائي</h3>
+
+            <div id="modalDetails"></div>
+
+            <button type="button" class="close-btn" onclick="closeModal()">
+                إغلاق
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
