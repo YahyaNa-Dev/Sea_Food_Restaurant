@@ -198,16 +198,5 @@ $(document).ready(function ()
         $('#myModal').show();
     });
 
-    // الكود بيتنفذ أول ما تفتح الصفحة
-document.addEventListener("DOMContentLoaded", function()
- {
-    // إذا كان عنوان الموقع بيحتوي على github.io (يعني أنت أونلاين)
-    if (window.location.hostname.includes("github.io"))
-         {
-        var element = document.getElementById("publish-link-container");
-        if (element) {
-            element.remove(); // بيحزف الزر وكل النص اللي جنبه 
-        }
-    }
-});
+
 });
