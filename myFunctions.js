@@ -67,9 +67,6 @@ function closeModal() {
 // تهيئة الصفحة أول ما تفتح
 $(document).ready(function () 
 {
-
-    // منخلي جدول الوجبات الرئيسية ظاهر بالبداية
-    $('#meals-table').show();
     $('#appetizers-table').hide();
 
     // منخفي كل سطور التفاصيل بالبداية
